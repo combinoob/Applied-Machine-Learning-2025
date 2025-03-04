@@ -1,0 +1,9 @@
+stages:
+  prepare:
+    cmd: python prepare.ipynb
+    deps:
+      - data/raw_data.csv
+    outs:
+      - data/train.csv
+      - data/validation.csv
+      - data/test.csv
