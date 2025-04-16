@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Pre-commit hook to ensure tests pass before committing to the main branch
+
+# Identify the current Git branch
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+# If on main, enforce testing before commit
+if [ "$current_branch" == "main" ]; then
+    echo "[Hook] Running test suite before committing to main..."
+
+    # Execute pytest with coverage report output to coverage.txt
+    pytest test.py --cov=test --cov-report=term-missing > coverage.txt
+
+    # Check result of pytest
+    if [ $? -eq 0 ]; then
+        echo "[Hook] All tests passed — proceeding with commit."
+        exit 0
+    else
+        echo "[Hook] Tests failed. Please resolve issues before committing to main."
+        exit 1
+    fi
+fi
