@@ -36,7 +36,7 @@ def load_test_model():
     Returns:
         object: The pre-trained model
     """
-    filename = '/home/Nirjhar Nath/AppliedMachineLearning/Assignment3/model/best_model.pkl'
+    filename = 'C:\Users\Nirjhar Nath\OneDrive\Desktop\AML2025-Assignment3/model/best_model.pkl'
     return pickle.load(open(filename, 'rb'))
 
 # function to test the score function
