@@ -10,5 +10,5 @@ Visit images.cv how to use: https://images.cv/how-to-use
 -- 
 Categories that have been downloaded: ['duck'] 
 
-
+ 
 We hope you find images.cv useful :)
